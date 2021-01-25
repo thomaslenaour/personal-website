@@ -7,12 +7,12 @@ import linkedinLogo from '../../images/social-networks/linkedin.svg'
 const SocialNetworks = ({ spaceBetweenLogo, logoWidth }) => (
   <ul className={`flex items-center ${spaceBetweenLogo}`}>
     <li>
-      <a href="https://twitter.com/lenaourthomas" target="_blank" rel="noreferrer" class="focus:outline-none">
+      <a href="https://twitter.com/lenaourthomas" target="_blank" rel="noreferrer" className="focus:outline-none">
         <img src={twitterLogo} alt="Logo Twitter" className={logoWidth} />
       </a>
     </li>
     <li>
-      <a href="https://github.com/thomaslenaour" target="_blank" rel="noreferrer" class="focus:outline-none">
+      <a href="https://github.com/thomaslenaour" target="_blank" rel="noreferrer" className="focus:outline-none">
         <img
           src={githubLogo}
           alt="Logo Github"
@@ -21,7 +21,7 @@ const SocialNetworks = ({ spaceBetweenLogo, logoWidth }) => (
       </a>
     </li>
     <li>
-      <a href="https://linkedin.com/in/lenaourthomas" target="_blank" rel="noreferrer" class="focus:outline-none">
+      <a href="https://linkedin.com/in/lenaourthomas" target="_blank" rel="noreferrer" className="focus:outline-none">
         <img
           src={linkedinLogo}
           alt="Logo LinkedIn"

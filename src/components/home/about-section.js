@@ -37,7 +37,7 @@ const AboutSection = () => {
       </div>
       <div className="bg-gray-800 text-white">
         <div className="main-container py-5">
-          <div className="grid lg:grid-cols-2 gap-10 lg:gap-16">
+          <div className="grid lg:grid-cols-2 items-center gap-10 lg:gap-16">
             <div>
               <TitleText title="Développeur basé à Bordeaux 🇫🇷">
                 Passionné par l'informatique dès le plus jeune âge, je me suis
@@ -57,13 +57,11 @@ const AboutSection = () => {
                 permis d'augmenter ma palette de compétences.
               </TitleText>
             </div>
-            <div className="flex justify-center">
-              <img
-                src={programmerPicture}
-                alt="Illustration programmeur"
-                className="w-2/3 lg:w-full"
-              />
-            </div>
+            <img
+              src={programmerPicture}
+              alt="Illustration programmeur"
+              className="hidden lg:block"
+            />
           </div>
         </div>
       </div>
