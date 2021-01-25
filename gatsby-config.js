@@ -1,11 +1,11 @@
 require("dotenv").config({
-  path: `.env.${process.env.NODE_ENV}`,
+  path: `.env`,
 })
 
 module.exports = {
   siteMetadata: {
     title: ``,
-    description: `Développeur Web freelance basé à Bordeaux, spécialisé dans la conception de sites web sur-mesure`,
+    description: `Développeur Web freelance basé à Bordeaux spécialisé dans la conception de sites web sur-mesure`,
     author: `@lenaourthomas`,
     siteUrl: `https://thomaslenaour.com`
   },
