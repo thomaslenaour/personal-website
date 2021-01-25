@@ -1,42 +1,34 @@
 import { Link } from "gatsby"
-import PropTypes from "prop-types"
-import React from "react"
+import React from 'react'
 
-const Header = ({ siteTitle }) => (
-  <header
-    style={{
-      background: `rebeccapurple`,
-      marginBottom: `1.45rem`,
-    }}
-  >
-    <div
-      style={{
-        margin: `0 auto`,
-        maxWidth: 960,
-        padding: `1.45rem 1.0875rem`,
-      }}
-    >
-      <h1 style={{ margin: 0 }}>
-        <Link
-          to="/"
-          style={{
-            color: `white`,
-            textDecoration: `none`,
-          }}
-        >
-          {siteTitle}
-        </Link>
-      </h1>
+import logoBlack from '../images/logos/logo-black.png'
+
+const isPartiallyActive = ({
+  isPartiallyCurrent
+}) => {
+  return isPartiallyCurrent
+    ? { className: "text-black" }
+    : {}
+}
+
+const Header = () => (
+  <header className="main-container py-5">
+    <div className="flex justify-between items-center">
+      <Link to="/">
+        <img src={logoBlack} alt="Logo TLN - Thomas Le Naour" className="w-20" />
+      </Link>
+      <nav>
+        <ul className="flex items-center text-gray-400 space-x-10">
+          <li>
+            <Link to="/projects" getProps={isPartiallyActive} className="transition duration-300 hover:text-black focus:outline-none">Projets</Link>
+          </li>
+          <li>
+            <Link to="/posts" getProps={isPartiallyActive} className="transition duration-300 hover:text-black focus:outline-none">Articles</Link>
+          </li>
+        </ul>
+      </nav>
     </div>
   </header>
 )
-
-Header.propTypes = {
-  siteTitle: PropTypes.string,
-}
-
-Header.defaultProps = {
-  siteTitle: ``,
-}
 
 export default Header

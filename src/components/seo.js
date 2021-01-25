@@ -10,8 +10,8 @@ import PropTypes from "prop-types"
 import { Helmet } from "react-helmet"
 import { useStaticQuery, graphql } from "gatsby"
 
-function SEO({ description, lang, meta, title }) {
-  const { site } = useStaticQuery(
+function SEO({ description, lang, meta, title, ogTitle, ogType, ogImage }) {
+  const { site, file } = useStaticQuery(
     graphql`
       query {
         site {
@@ -21,12 +21,17 @@ function SEO({ description, lang, meta, title }) {
             author
           }
         }
+        file(name: {eq: "og-tln"}) {
+          publicURL
+        }
       }
     `
   )
 
   const metaDescription = description || site.siteMetadata.description
   const defaultTitle = site.siteMetadata?.title
+  const metaOgTitle = ogTitle || title
+  const metaOgImage = ogImage || file.publicURL
 
   return (
     <Helmet
@@ -34,7 +39,7 @@ function SEO({ description, lang, meta, title }) {
         lang,
       }}
       title={title}
-      titleTemplate={defaultTitle ? `%s | ${defaultTitle}` : null}
+      titleTemplate={defaultTitle ? `${defaultTitle} | %s` : null}
       meta={[
         {
           name: `description`,
@@ -42,7 +47,7 @@ function SEO({ description, lang, meta, title }) {
         },
         {
           property: `og:title`,
-          content: title,
+          content: metaOgTitle,
         },
         {
           property: `og:description`,
@@ -50,7 +55,11 @@ function SEO({ description, lang, meta, title }) {
         },
         {
           property: `og:type`,
-          content: `website`,
+          content: ogType,
+        },
+        {
+          property: `og:image`,
+          content: metaOgImage,
         },
         {
           name: `twitter:card`,
@@ -74,9 +83,10 @@ function SEO({ description, lang, meta, title }) {
 }
 
 SEO.defaultProps = {
-  lang: `en`,
+  lang: `fr`,
   meta: [],
   description: ``,
+  ogType: `website`
 }
 
 SEO.propTypes = {
@@ -84,6 +94,9 @@ SEO.propTypes = {
   lang: PropTypes.string,
   meta: PropTypes.arrayOf(PropTypes.object),
   title: PropTypes.string.isRequired,
+  ogTitle: PropTypes.string,
+  ogType: PropTypes.string,
+  ogImage: PropTypes.string
 }
 
 export default SEO
