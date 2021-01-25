@@ -1,6 +1,6 @@
 import React from 'react'
 
-import Wave from '../ui-elements/Wave'
+import Wave from '../ui-elements/wave'
 import TitleText from './title-text'
 import SkillList from './skills/skills-list'
 
