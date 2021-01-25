@@ -7,7 +7,7 @@ module.exports = {
     title: ``,
     description: `Développeur Web freelance basé à Bordeaux, spécialisé dans la conception de sites web sur-mesure`,
     author: `@lenaourthomas`,
-    siteUrl: `http://localhost:9000`
+    siteUrl: `https://thomaslenaour.com`
   },
   plugins: [
     `gatsby-plugin-react-helmet`,
