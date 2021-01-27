@@ -49,12 +49,11 @@ const AboutSection = () => {
               </TitleText>
               <SkillList skills={skills} classes="mt-5" />
               <TitleText title="Étudiant en informatique 👨‍💻" classes="mt-10">
-                Passionné par l'informatique dès le plus jeune âge, je me suis
-                formé en autodidacte aux différents langages de programmation.
-                J'ai fait le choix de m'orienter vers le développement web &
-                mobile, domaines pour lesquelles je porte un fort intérêt. J'ai
-                eu l'occasion de m'épanouir dans de nombreux projets, ce qui m'a
-                permis d'augmenter ma palette de compétences.
+              Actuellement en Bachelor 3 à l'école Bordeaux Ynov Campus (Ingésup), 
+              j'ai dans l'optique de réaliser un Mastère Expert en Informatique et 
+              Systèmes d'Information. Cette formation me permet d'élargir mes 
+              compétences à travers des projets d'école et de toucher à différentes 
+              branches de l'informatique en général.
               </TitleText>
             </div>
             <img
