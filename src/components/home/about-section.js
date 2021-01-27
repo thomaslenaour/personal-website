@@ -33,7 +33,7 @@ const AboutSection = () => {
     <section>
       <div className="relative">
         <Wave color="#FBBF24" />
-        <Wave color="#1F2937" classes="absolute top-0 mt-3" />
+        <Wave color="#1F2937" classes="absolute top-0 mt-2" />
       </div>
       <div className="bg-gray-800 text-white">
         <div className="main-container py-5">
@@ -67,7 +67,7 @@ const AboutSection = () => {
       </div>
       <div className="relative">
         <Wave color="#FBBF24" reverse />
-        <Wave color="#1F2937" classes="absolute bottom-0 mb-3" reverse />
+        <Wave color="#1F2937" classes="absolute bottom-0 mb-2" reverse />
       </div>
     </section>
   )
