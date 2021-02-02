@@ -86,6 +86,7 @@ body {
   @apply text-blue-400 font-medium mb-3;
 }
 
-.article-content pre {
+.article-content pre,
+.article-content code {
   @apply text-sm !important;
 }
