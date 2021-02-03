@@ -9,7 +9,7 @@ const ProjectsPage = () => {
   const data = useStaticQuery(
     graphql`
       query {
-        allContentfulProject(sort: {order: DESC, fields: createdAt}) {
+        allContentfulProject(sort: {order: DESC, fields: publishedAt}) {
           edges {
             node {
               id

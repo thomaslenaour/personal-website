@@ -12,7 +12,7 @@ const IndexPage = () => {
   const data = useStaticQuery(
     graphql`
       query {
-        allContentfulProject(limit: 3, sort: {fields: createdAt, order: DESC}) {
+        allContentfulProject(limit: 3, sort: {fields: publishedAt, order: DESC}) {
           edges {
             node {
               id
