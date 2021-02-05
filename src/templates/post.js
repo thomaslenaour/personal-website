@@ -24,7 +24,7 @@ const PostTemplate = ({ data, location }) => {
         description={excerp}
         ogType="article"
         ogTitle={title}
-        ogImage={image.localFile.publicURL}
+        ogImage={`${siteUrl}${image.localFile.publicURL}`}
       />
         <article className="max-w-4xl mx-auto py-5">
           <div className="main-container">

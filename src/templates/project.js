@@ -1,11 +1,13 @@
 import React from "react"
 import { graphql } from "gatsby"
 
+import useSiteMetadata from "../hooks/use-site-metadata"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 import ButtonBack from "../components/ui-elements/button-back"
 
 const ProjectTemplate = ({ data }) => {
+  const { siteUrl } = useSiteMetadata()
   const { name, type, body, image } = data.contentfulProject
   const typeClass = type === 'professionnel' ? 'bg-green-500' : type === 'personnel' ? 'bg-purple-500' : 'bg-blue-500'
   
@@ -14,7 +16,7 @@ const ProjectTemplate = ({ data }) => {
       <SEO
         title={name + " | Thomas Le Naour"}
         description={`Présentation du projet ${name}`}
-        ogImage={image.localFile.publicURL}
+        ogImage={`${siteUrl}${image.localFile.publicURL}`}
       />
       <div className="main-container py-5">
         <div className="grid lg:grid-cols-2 gap-6 md:gap-10">
