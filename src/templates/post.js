@@ -1,13 +1,20 @@
 import React from "react"
 import { graphql } from "gatsby"
 
+import useSiteMetadata from "../hooks/use-site-metadata"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 import TagsList from "../components/ui-elements/tags/tags-list"
 import MinutesDate from "../components/ui-elements/minutes-date"
 import ButtonBack from '../components/ui-elements/button-back'
 
-const PostTemplate = ({ data }) => {
+import twitterLogo from '../images/social-networks/twitter.svg'
+import facebookLogo from '../images/social-networks/facebook.svg'
+import emailLogo from '../images/social-networks/email.svg'
+import linkedinLogo from '../images/social-networks/linkedin.svg'
+
+const PostTemplate = ({ data, location }) => {
+  const { siteUrl } = useSiteMetadata()
   const { title, tags, excerp, image, body, readTime, publishedAt } = data.contentfulPost
   
   return (
@@ -40,6 +47,50 @@ const PostTemplate = ({ data }) => {
             </div>
           </div>
         </article>
+
+        <section className="max-w-4xl mx-auto pb-5">
+          <div className="main-container">
+            <h2 className="main-title mb-6 text-underline">Partagez cet article</h2>
+            <ul className={`flex items-center space-x-10`}>
+              <li>
+                <a href={`https://twitter.com/intent/tweet?url=${siteUrl}${location.pathname}`} target="_blank" title="Partager sur Twitter" rel="noreferrer" className="focus:outline-none">
+                  <img
+                    src={twitterLogo}
+                    alt="Logo Twitter"
+                    className="w-10"
+                  />
+                </a>
+              </li>
+              <li>
+                <a href={`https://www.facebook.com/sharer/sharer.php?u=${siteUrl}${location.pathname}`} target="_blank" title="Partager sur Facebook" rel="noreferrer" className="focus:outline-none">
+                  <img
+                    src={facebookLogo}
+                    alt="Logo Facebook"
+                    className="w-10"
+                  />
+                </a>
+              </li>
+              <li>
+                <a href={`https://www.linkedin.com/sharing/share-offsite/?url=${siteUrl}${location.pathname}`} target="_blank" rel="noreferrer" title="Partager sur LinkedIn" className="focus:outline-none">
+                  <img
+                    src={linkedinLogo}
+                    alt="Logo LinkedIn"
+                    className="w-10"
+                  />
+                </a>
+              </li>
+              <li>
+                <a href={`mailto:?&subject=&body=${siteUrl}${location.pathname}`} target="_blank" rel="noreferrer" title="Partager par email" className="focus:outline-none">
+                  <img
+                    src={emailLogo}
+                    alt="Logo Email"
+                    className="w-10"
+                  />
+                </a>
+              </li>
+            </ul>
+          </div>
+        </section>
     </Layout>
   )
 }
