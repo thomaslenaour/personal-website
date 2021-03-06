@@ -8,7 +8,7 @@ const CardItem = ({ item, type }) => {
     <div className="text-white">
       <Link to={`/projects/${item.node.slug}`}>
         <div
-          className="relative bg-center bg-no-repeat bg-cover rounded-md shadow h-64 animate-scale-98"
+          className="relative bg-center bg-no-repeat bg-cover rounded-md shadow h-64 sm:h-80 lg:h-64 animate-scale-98"
           style={{ backgroundImage: `url(${item.node.image.localFile.publicURL})` }}
         >
           <div className="absolute top-0 w-full h-full bg-black opacity-50 z-10 rounded-md" />

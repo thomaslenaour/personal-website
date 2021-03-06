@@ -9,7 +9,7 @@ const CardsList = ({ title, description, items, type }) => {
         {title}
       </h2>
       <p className="mb-5">{description}</p>
-      <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-10">
+      <div className="grid lg:grid-cols-3 gap-6 lg:gap-10">
         {items.length > 0 ? (
           items.map(item => <CardItem key={item.node.id} item={item} type={type} />)
         ) : (
